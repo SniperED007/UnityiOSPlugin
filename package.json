@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "displayName": "iOS Features",
   "description": "Adds support to iOS Native features.",
-  "unity": "6000.0",
+  "unity": "2021.3",
   "author": {
     "name": "Edward",
     "email": "contact@LighthouseGamesStudio.com",
@@ -15,7 +15,5 @@
     "ios"
   ],
   "category": "Tools",
-  "dependencies": {
-    //"com.unity.textmeshpro": "3.0.6"
-  }
+  "dependencies": {}
 }
