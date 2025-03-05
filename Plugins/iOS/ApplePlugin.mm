@@ -1,38 +1,38 @@
 #import <UIKit/UIKit.h>
+#import "UnityInterface.h"
 
-extern "C"
-{
-    void _SetStatusBarVisible(bool visible)
-    {
+extern "C" {
+
+    void _SetStatusBarVisible(bool visible) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication] setStatusBarHidden:!visible withAnimation:UIStatusBarAnimationFade];
+            UIViewController *vc = UnityGetGLViewController();
+            UIApplication *app = [UIApplication sharedApplication];
+            
+            // Inform Unity to update the appearance
+            [UIApplication.sharedApplication setStatusBarHidden:!visible withAnimation:UIStatusBarAnimationFade];
+            [vc setNeedsStatusBarAppearanceUpdate];
         });
     }
 
-    void _SetStatusBarStyle(int style)
-    {
+    void _SetStatusBarStyle(int style) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIStatusBarStyle statusBarStyle = UIStatusBarStyleDefault;
-            if (@available(iOS 13.0, *)) {
-                switch (style) {
-                    case 1:
-                        statusBarStyle = UIStatusBarStyleLightContent;
-                        break;
-                    case 2:
-                        statusBarStyle = UIStatusBarStyleDarkContent;
-                        break;
-                    default:
-                        statusBarStyle = UIStatusBarStyleDefault;
-                        break;
-                }
-            } else {
-                statusBarStyle = (style == 1) ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+            UIViewController *vc = UnityGetGLViewController();
+            UIStatusBarStyle barStyle = UIStatusBarStyleDefault;
+
+            switch(style) {
+                case 0: barStyle = UIStatusBarStyleDefault; break;  // Automatic
+                case 1: barStyle = UIStatusBarStyleLightContent; break;
+                case 2:
+                    if (@available(iOS 13.0, *)) {
+                        barStyle = UIStatusBarStyleDarkContent;
+                    } else {
+                        barStyle = UIStatusBarStyleDefault;
+                    }
+                    break;
             }
 
-            UIViewController *vc = UnityGetGLViewController();
+            [[UIApplication sharedApplication] setStatusBarStyle:barStyle animated:YES];
             [vc setNeedsStatusBarAppearanceUpdate];
-
-            [UIApplication sharedApplication].statusBarStyle = statusBarStyle;
         });
     }
 }
