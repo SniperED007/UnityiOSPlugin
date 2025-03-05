@@ -1,0 +1,21 @@
+{
+  "name": "com.LighthouseGamesStudio.iOS",
+  "version": "1.0.0",
+  "displayName": "iOS Features",
+  "description": "Adds support to iOS Native features.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Edward",
+    "email": "contact@LighthouseGamesStudio.com",
+    "url": "https://LighthouseGamesStudio.com"
+  },
+  "keywords": [
+    "unity",
+    "plugin",
+    "ios"
+  ],
+  "category": "Tools",
+  "dependencies": {
+    //"com.unity.textmeshpro": "3.0.6"
+  }
+}
