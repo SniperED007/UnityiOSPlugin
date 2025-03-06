@@ -6,11 +6,13 @@ This Unity package provides easy access to native iOS features directly within y
 
 ## 🚀 Features
 
-- **Show/Hide iOS Status Bar**
-- **Change iOS Status Bar Style:**
-  - Automatic
-  - Light
-  - Dark
+- **Status Bar**  
+  *Unity doesn't support changing the Status Bar settings during runtime, so this feature addresses that.*  
+  - **Show/Hide iOS Status Bar**  
+  - **Change iOS Status Bar Style:**  
+    - Automatic  
+    - Light  
+    - Dark  
 
 *(Additional features coming soon!)*
 
@@ -71,6 +73,7 @@ public class Example : MonoBehaviour
 UnityiOSPlugin/
 ├── Runtime/            # C# scripts for Unity runtime
 ├── Plugins/iOS/        # Native iOS code
+├── Editor/        	 # Post-Build script to set up required Xcode configurations
 ├── package.json        # Unity Package Manifest
 ├── README.md           # This file
 ```
