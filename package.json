@@ -1,6 +1,6 @@
 {
   "name": "com.lighthousegamesstudio.ios",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "iOS Features",
   "description": "Adds support to iOS Native features.",
   "unity": "2021.3",
@@ -15,5 +15,6 @@
     "ios"
   ],
   "category": "Tools",
-  "dependencies": {}
+  "dependencies": {},
+  "changelog": "CHANGELOG.md"
 }
