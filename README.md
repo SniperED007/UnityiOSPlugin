@@ -1,6 +1,6 @@
 # Unity iOS Plugin
 
-This Unity package provides easy access to native iOS features directly within your Unity project. Developed and maintained by **Lighthouse Games Studio**, it simplifies the integration of native iOS capabilities like controlling the iOS Status Bar.
+This Unity package provides easy access to native iOS features directly within your Unity project. Developed and maintained by **Lighthouse Games Studio**, it simplifies the integration of native iOS capabilities like controlling the iOS Status Bar and providing haptic feedback.
 
 ---
 
@@ -13,6 +13,17 @@ This Unity package provides easy access to native iOS features directly within y
     - Automatic  
     - Light  
     - Dark  
+
+- **Haptics**
+  *Easily add native haptic feedback to enhance user interaction.*
+  - **Check Haptic Support**
+  - **Play Haptic Feedback:**
+    - Light Impact
+    - Medium Impact
+    - Heavy Impact
+    - Success
+    - Warning
+    - Error
 
 *(Additional features coming soon!)*
 
@@ -65,6 +76,20 @@ public class Example : MonoBehaviour
 }
 ```
 
+### Using Haptic Feedback
+
+```csharp
+using LighthouseGames;
+
+public class Example : MonoBehaviour
+{
+    void Start()
+    {
+        iOS.PlayHaptic(HapticType.Success); // Play Success haptic feedback
+    }
+}
+```
+
 ---
 
 ## 🗂 Folder Structure
@@ -73,7 +98,7 @@ public class Example : MonoBehaviour
 UnityiOSPlugin/
 ├── Runtime/            # C# scripts for Unity runtime
 ├── Plugins/iOS/        # Native iOS code
-├── Editor/        	 # Post-Build script to set up required Xcode configurations
+├── Editor/             # Post-Build script to set up required Xcode configurations
 ├── package.json        # Unity Package Manifest
 ├── README.md           # This file
 ```
@@ -86,7 +111,4 @@ UnityiOSPlugin/
 - iOS Build Target
 
 ---
-
-
-
 
